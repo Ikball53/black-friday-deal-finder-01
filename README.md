@@ -1,45 +1,41 @@
-# DealHound — Black Friday 2026 Deal Finder
+[![make.fun · black-friday-deal-finder-01](https://make.fun/badge/black-friday-deal-finder-01.svg)](https://make.fun/bounty/black-friday-deal-finder-01?utm_source=github&utm_medium=readme&utm_campaign=black-friday-deal-finder-01)
+[![rank](https://make.fun/badge/black-friday-deal-finder-01/Ikball53/black-friday-deal-finder-01/rank.svg)](https://make.fun/bounty/black-friday-deal-finder-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=black-friday-deal-finder-01)
+[![reward](https://make.fun/badge/black-friday-deal-finder-01/Ikball53/black-friday-deal-finder-01/reward.svg)](https://make.fun/bounty/black-friday-deal-finder-01?utm_source=github&utm_medium=readme&utm_campaign=black-friday-deal-finder-01)
 
-A static deal finder for Black Friday and Cyber Monday 2026, built for the
-make.fun `black-friday-deal-finder-01` bounty.
+# DealHound
 
-## What it is
+A static, no-network Black Friday / Cyber Monday deal finder. Everything runs
+locally in the browser — no API calls, no tracking, no backend.
 
-DealHound lists 30 real deals checked on Friday 27 November 2026 across
-Amazon, Best Buy, Walmart, Target, Disney+ and Apple TV — TVs, laptops,
-audio, wearables, gaming, home, kitchen, toys, streaming, beauty and phones.
-Every card shows the product, the store, a link to the product at that store,
-the sale price, the usual price, the computed discount, the dollars saved, the
-source that reported the price, and the date it was checked.
+## What it covers
 
-Each deal carries an honest verdict:
+Thirty real deals, checked on 27 November 2026, across Best Buy, Amazon,
+Walmart, Target, Disney+, and Apple TV. Each deal lists the product, the
+store, a link to the store listing, the sale price, the usual price, the
+discount, the date it was checked, the source, and a verdict: Real Deal,
+Strong Price, or Routine Sale.
 
-- **Real deal** — a new low or the lowest price seen this season.
-- **Strong price** — a genuinely good cut, but not a record.
-- **Routine sale** — a small cut; fine if you need it now, not a reason to rush.
+## Finding a deal
 
-Search, category, store, minimum-discount and verdict filters all work, plus
-sorting by dollars saved, discount, price or name. A comparison strip shows
-three products found at two stores each, cheapest first. Filters live in the
-URL query string, so any filtered view can be linked (`?q=dyson`,
-`?verdict=real`, `?category=TVs`).
+Search by product name, or narrow the list by category, store, and discount
+size. A cross-store comparison strip sits at the top, so the same product at
+different stores can be judged side by side at a glance. Deals marked Real
+Deal are the ones where the sale price beats the usual price by a clear
+margin; Routine Sale means the discount is the kind that shows up often.
 
-## How it is built
+## Running it
 
-- `app/` — the static site, no build step, no network requests. `deals.js`
-  holds the deal data, `finder.js` renders and filters it, `compare.js`
-  renders the cross-store comparison, `stats.js` fills the header stats.
-- `main.ts` — the Node 22 entry program: copies `app/` and `screenshots/`
-  to the output directory and writes `dossier.json` with the kit's
-  `buildDossier`.
-- `screenshots/` — real renders of the running site (desktop + phone).
+Open `app/index.html` directly in a browser, or serve the `app/` folder with
+any static server:
 
-## Run it
-
-Serve `app/` with any static server and open `index.html`, for example:
-
-```
-python3 -m http.server 8080 --directory app
+```sh
+python3 -m http.server -d app
 ```
 
-Then open http://localhost:8080/ in a desktop or phone browser.
+`main.ts` hands this site in for the make.fun bounty.
+
+## Bounty
+
+Built for the make.fun Black Friday deal-finder bounty:
+
+https://make.fun/bounty/black-friday-deal-finder-01
