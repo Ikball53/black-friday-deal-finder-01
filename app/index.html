@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DealHound — Real Black Friday &amp; Cyber Monday Deals 2026</title>
+<meta name="description" content="DealHound lists real Black Friday and Cyber Monday 2026 deals, checked 27 November 2026, with a verdict on whether each one is really a deal.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-name">Deal<span class="hound">Hound</span></span>
+      <span class="brand-tag">Black Friday 2026</span>
+    </div>
+    <p class="tagline">Real Black Friday and Cyber Monday deals, checked by hand — with an honest verdict on whether each one is actually a bargain.</p>
+    <p class="checked-line">Every price below was read at the named store or in a deals source naming the store, and checked on Friday 27 November 2026. Sale ends Cyber Monday, 30 November.</p>
+    <div class="stats-bar" id="stats-bar">
+      <div class="stat"><span class="stat-value" id="stat-deals">–</span><span class="stat-label">Deals checked</span></div>
+      <div class="stat"><span class="stat-value" id="stat-stores">–</span><span class="stat-label">Stores</span></div>
+      <div class="stat"><span class="stat-value" id="stat-categories">–</span><span class="stat-label">Categories</span></div>
+      <div class="stat"><span class="stat-value" id="stat-biggest">–</span><span class="stat-label">Biggest discount</span></div>
+      <div class="stat"><span class="stat-value" id="stat-saved">–</span><span class="stat-label">Total dollars saved</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="controls" aria-label="Find a deal">
+    <div class="controls-row">
+      <input id="search-box" type="search" placeholder="Search deals — try “dyson”, “airpods”, “lego”…" aria-label="Search deals">
+      <label for="filter-category">Category</label>
+      <select id="filter-category" aria-label="Filter by category"></select>
+      <label for="filter-store">Store</label>
+      <select id="filter-store" aria-label="Filter by store"></select>
+      <label for="filter-minoff">Min. discount</label>
+      <select id="filter-minoff" aria-label="Filter by minimum discount">
+        <option value="0">Any discount</option>
+        <option value="20">20% off or more</option>
+        <option value="30">30% off or more</option>
+        <option value="40">40% off or more</option>
+        <option value="50">50% off or more</option>
+      </select>
+      <label for="filter-sort">Sort by</label>
+      <select id="filter-sort" aria-label="Sort deals">
+        <option value="saving">Biggest saving ($)</option>
+        <option value="percent">Biggest discount (%)</option>
+        <option value="price">Lowest price</option>
+        <option value="name">Name A–Z</option>
+      </select>
+    </div>
+    <div id="verdict-chips" role="group" aria-label="Filter by verdict">
+      <button type="button" data-verdict="all" aria-pressed="true">All deals</button>
+      <button type="button" data-verdict="real" aria-pressed="false">Real deals only</button>
+      <button type="button" data-verdict="strong" aria-pressed="false">Strong prices</button>
+      <button type="button" data-verdict="routine" aria-pressed="false">Routine sales</button>
+    </div>
+  </section>
+
+  <div class="result-line">
+    <span id="result-count">Loading deals…</span>
+    <button id="clear-filters" type="button" hidden>Clear all filters</button>
+  </div>
+
+  <section id="deal-grid" aria-live="polite"></section>
+
+  <section class="compare-section" aria-label="Same product, different stores">
+    <h2>Same product, different store — who is cheapest?</h2>
+    <p>Three products we found at two stores each. The cheapest checked price is marked.</p>
+    <div id="compare-list"></div>
+  </section>
+
+  <section class="method" aria-label="How we check a deal">
+    <h2>How we decide if it is really a deal</h2>
+    <ul>
+      <li><strong>Real deal</strong> — a new low or the lowest price seen this season, with the evidence on the card.</li>
+      <li><strong>Strong price</strong> — a genuinely good cut, but not a record low.</li>
+      <li><strong>Routine sale</strong> — a small cut on a product that rarely drops much; fine if you need it now, not a reason to rush.</li>
+    </ul>
+    <p>Every discount is computed from the sale price and the usual price the store or source showed — never typed in. A “was” price that looks inflated is called out on the card instead of being trusted. Prices change fast in Black Friday week: always confirm the price on the store page before you buy. DealHound takes no payment and earns nothing from the links; each link goes to the product at the store that sells it.</p>
+    <p>Biggest single saving this week: <span id="stat-biggest-name">—</span>.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>DealHound — an independent deal finder built for Black Friday 2026. Prices checked 27 November 2026 at Amazon, Best Buy, Walmart, Target, Disney+ and Apple TV. Store names belong to their owners; this site is not affiliated with any of them.</p>
+</footer>
+
+<script src="deals.js"></script>
+<script src="finder.js"></script>
+<script src="compare.js"></script>
+<script src="stats.js"></script>
+</body>
+</html>
